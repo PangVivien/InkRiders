@@ -10,6 +10,11 @@ public class GameMenu : MonoBehaviour
     public GameObject Gallery;
     public VideoPlayer backgroundVideo;
 
+    private void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
+
     public void StartGame()
     {
         if(backgroundVideo != null)
