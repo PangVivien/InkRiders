@@ -5,15 +5,27 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     [Header("AudioSource")]
-    [SerializeField] AudioSource BGMSource;
-    [SerializeField] AudioSource SFXSource;
+    [SerializeField] private AudioSource BGMSource;
 
-    [Header("AudioClip")]
-    public AudioClip background;
-    public AudioClip death;
+    private static GameObject instance;
 
     private void Awake()
     {
+        if (instance != null && instance != gameObject)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        instance = gameObject;
         DontDestroyOnLoad(gameObject);
+    }
+
+    void Start()
+    {
+        if (!BGMSource.isPlaying)
+        {
+            BGMSource.Play();
+        }
     }
 }
