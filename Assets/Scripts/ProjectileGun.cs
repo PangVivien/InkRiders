@@ -19,13 +19,13 @@ public class ProjectileGun : MonoBehaviour
             
     }
 
-    void Update()
-    {
-        if(Input.GetButton("Fire1") && Time.time >= timeToFire)
-        {
-            Fire();
-        }
-    }
+    //void Update()
+    //{
+    //    if(Input.GetButton("Fire1") && Time.time >= timeToFire)
+    //   {
+    //       Fire();
+    //}
+    //}
 
     public void Fire()
     {
